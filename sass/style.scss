@@ -1,0 +1,164 @@
+@import "variables";
+
+*,
+*:hover,
+*:focus {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("/images/pattern-curve.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 80px;
+  background-position: 43% 98%;
+  overflow: hidden;
+}
+
+#container {
+  position: relative;
+  width: 90vw;
+  height: inherit;
+  margin: 2rem auto;
+  padding: 1.5rem 0.5rem;
+  transition: all 0.8s linear;
+  transform-origin: right;
+
+ 
+}
+
+.container {
+ position: absolute;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column-reverse;
+  margin: 0 auto;
+  text-align: center;
+  font-size: $f-size-1;
+  color: $darkBlue;
+
+  .img {
+    overflow: hidden;
+    // margin-bottom: 1.5rem;
+    background-image: url("/images/pattern-bg.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    img {
+      margin-top: 1.5rem;
+      width: clamp(250px, 25vw, 310px);
+      border-radius: 7px;
+    }
+  }
+  .texts {
+    padding: 2rem 0;
+    background-image: url("/images/pattern-quotes.svg");
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: 50% 0;
+    margin-top: 1.25rem;
+    font-size: clamp(0.75rem, 2vw, calc(0.25rem + $f-size-1));
+    margin-bottom: 5rem;
+
+    h1 {
+      margin-top: 1rem;
+      font-size: calc($f-size-1 + 0.25rem);
+      font-weight: $f-w-7;
+    }
+    span {
+      font-size: calc($f-size-1 + 0.25rem);
+      font-weight: $f-w-3;
+      color: $grayishBlue;
+    }
+  }
+}
+.container_2 {
+   transform: translateX(150% );
+}
+
+.button {
+  z-index: 111;
+  position: absolute;
+  background-color: white;
+  top: calc(16.5rem + 5vw);
+ 
+  border-radius: 200px 200px 200px 200px;
+  transform: translateX(30vw);
+
+  .btn {
+    background-color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 200px 200px 200px;
+  }
+}
+
+@media screen and(min-width:1100px) {
+  body{
+
+    background-image: none;
+  }
+  #container {
+   width: 100%;
+   max-width: 1440px;
+   height: 1110px;
+   top: 50%;
+   transform: translateY(-30%);
+    background-image: url("/images/pattern-curve.svg");
+    background-repeat: no-repeat;
+    background-position: bottom left ;
+  }
+
+  .container {
+   
+    background-repeat: no-repeat;
+    background-size: 100% 80px;
+    background-position: 43% 98%;
+    width: 80%;
+    max-width: 1440px;
+   //  height:min-content;
+    flex-direction: row;
+    text-align: left;
+    padding: 3rem;
+    flex: 1;
+    .img {
+      width: 100%;
+     // padding: 2rem;
+      width: 100%;
+      object-fit: contain;
+      height: 40vh;
+      background-size: 100%;
+      // background-position: 100%;
+      flex: 0 1 40%;
+      img {
+        margin: 0;
+        width: 100%;
+        //  height:inherit;
+      }
+    }
+
+    .texts {
+      width: 50%;
+      transform: translate(15%,35%);
+
+      h1 {
+        display: inline-block;
+        margin-right: 0;
+      }
+    }
+   
+  }
+  .button{
+    top: clamp(calc(22.5rem + 1vh) ,46vh, 800px);
+    left:calc(2.5rem + 10vw);
+    
+  }
+
+  .container_2 {
+   // transform: translateX(200%);
+  }
+}
